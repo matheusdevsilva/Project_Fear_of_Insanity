@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://oqht8awtxdc7"]
+
+[ext_resource type="Script" uid="uid://b6d2jgo50hpsg" path="res://Scenes/UI/MainMenu/Scripts/MainMenu.gd" id="1_les83"]
+[ext_resource type="PackedScene" uid="uid://b64vodenr4bt5" path="res://Scenes/UI/MainMenu/Components/UI_Saves.tscn" id="2_7rqq1"]
+
+[sub_resource type="SystemFont" id="SystemFont_les83"]
+
+[node name="MainMenu" type="Control" unique_id=384883656]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_les83")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=464353630]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.07760417
+anchor_top = 0.59537035
+anchor_right = 0.231
+anchor_bottom = 0.814
+offset_right = -0.28363037
+offset_bottom = -0.11999512
+theme_override_constants/separation = 14
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonPlayOffline" type="Button" parent="VBoxContainer" unique_id=583786070]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_les83")
+theme_override_font_sizes/font_size = 20
+text = "Play
+"
+
+[node name="ButtonMultiplayer" type="Button" parent="VBoxContainer" unique_id=1029219602]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_les83")
+theme_override_font_sizes/font_size = 20
+text = "Multiplayer"
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonSettings" type="Button" parent="VBoxContainer" unique_id=561767756]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_les83")
+theme_override_font_sizes/font_size = 20
+text = "Settings"
+
+[node name="ButtonCredits" type="Button" parent="VBoxContainer" unique_id=32754987]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_les83")
+theme_override_font_sizes/font_size = 20
+text = "Credits
+"
+
+[node name="ButtonQuit" type="Button" parent="VBoxContainer" unique_id=1753547724]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_les83")
+theme_override_font_sizes/font_size = 20
+text = "Quit"
+
+[node name="ListButtonsMultiplayer" type="VBoxContainer" parent="." unique_id=1335508218]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2671875
+anchor_top = 0.6259259
+anchor_right = 0.358
+anchor_bottom = 0.688
+offset_right = -0.3600464
+offset_bottom = -1.0400391
+theme_override_constants/separation = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonHostGame" type="Button" parent="ListButtonsMultiplayer" unique_id=738642076]
+layout_mode = 2
+text = "Host Game"
+
+[node name="ButtonJoinGame" type="Button" parent="ListButtonsMultiplayer" unique_id=1354483192]
+layout_mode = 2
+text = "Join Game"
+
+[node name="UiSaves" parent="." unique_id=927885445 instance=ExtResource("2_7rqq1")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="VBoxContainer/ButtonPlayOffline" to="." method="_on_button_play_offline_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonMultiplayer" to="." method="_on_button_multiplayer_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonSettings" to="." method="_on_button_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonCredits" to="." method="_on_button_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonQuit" to="." method="_on_button_quit_pressed"]
+[connection signal="pressed" from="ListButtonsMultiplayer/ButtonHostGame" to="." method="_on_button_host_game_pressed"]
+[connection signal="pressed" from="ListButtonsMultiplayer/ButtonJoinGame" to="." method="_on_button_join_game_pressed"]

@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cfpjkxolyhegf"]
+
+[ext_resource type="Script" uid="uid://tkjne0w8bqyg" path="res://Scenes/UI/Loading/Loading.gd" id="1_3oyyf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lrulo"]
+font_size = 30
+
+[node name="Loading" type="Control" unique_id=1905788047]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3oyyf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=30700309]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=179666930]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.84166664
+anchor_top = 0.9064815
+anchor_right = 0.9592917
+anchor_bottom = 0.9454075
+offset_right = 0.15991211
+offset_bottom = -0.040039063
+label_settings = SubResource("LabelSettings_lrulo")
+metadata/_edit_use_anchors_ = true

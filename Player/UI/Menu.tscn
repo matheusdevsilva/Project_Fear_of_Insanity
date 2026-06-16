@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cgxwtdqss1hfx"]
+
+[ext_resource type="Script" uid="uid://b16unoqjpv2c" path="res://Player/Scripts/Menu.gd" id="1_mf0b6"]
+
+[node name="Menu" type="Control" unique_id=503948812]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mf0b6")
+
+[node name="DarkOverlay" type="ColorRect" parent="." unique_id=1055042655]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.50200003)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1433135703]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.44900003
+anchor_top = 0.439
+anchor_right = 0.56100005
+anchor_bottom = 0.669
+offset_left = 0.9199219
+offset_top = 0.37997437
+offset_right = -0.12011719
+offset_bottom = 0.06842041
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="ButtonContinue" type="Button" parent="VBoxContainer" unique_id=815465960]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Continue"
+
+[node name="ButtonInviteFriends" type="Button" parent="VBoxContainer" unique_id=566842583]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Invite Friends"
+
+[node name="ButtonSettings" type="Button" parent="VBoxContainer" unique_id=1446117069]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Settings"
+
+[node name="ButtonQuit" type="Button" parent="VBoxContainer" unique_id=667356079]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Quit"

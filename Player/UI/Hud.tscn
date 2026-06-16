@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://dnaw7djwaeyn2"]
+
+[ext_resource type="Script" uid="uid://db0xhh8v8wxef" path="res://Player/Scripts/Hud.gd" id="1_6p3e6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8ty0"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Hud" type="Control" unique_id=473852466]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+script = ExtResource("1_6p3e6")
+
+[node name="Panel" type="Panel" parent="." unique_id=93748189]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.507
+anchor_bottom = 0.512
+offset_right = -7.4400635
+offset_bottom = -6.960022
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_q8ty0")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=274092544]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3862847
+anchor_top = 0.9197531
+anchor_right = 0.65739584
+anchor_bottom = 0.9817531
+offset_right = -0.3199997
+offset_bottom = -0.1760025
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=997291797]
+layout_mode = 2
+expand_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer" unique_id=140280520]
+layout_mode = 2
+expand_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer" unique_id=448872146]
+layout_mode = 2
+expand_mode = 3
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2002578268]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.81100005
+anchor_top = 0.947926
+anchor_right = 0.96800005
+anchor_bottom = 0.97
+offset_left = 0.8798828
+offset_top = 0.2399292
+offset_right = 0.4399414
+offset_bottom = 0.4000244
+value = 100.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b0tplxt2uwvcd"]
+
+[ext_resource type="Script" uid="uid://32tgmhc1te4i" path="res://Player/Scripts/Player.gd" id="1_3qydi"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l2ndj"]
+
+[node name="Player" type="CharacterBody3D" unique_id=885874394]
+script = ExtResource("1_3qydi")
+
+[node name="Pivot" type="Node3D" parent="." unique_id=1096503926]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6444576, -0.26154736)
+
+[node name="Camera3D" type="Camera3D" parent="Pivot" unique_id=213239484]
+
+[node name="RayCast3D" type="RayCast3D" parent="Pivot/Camera3D" unique_id=1275733562]
+target_position = Vector3(0, 0, -1.6)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1107064586]
+shape = SubResource("CapsuleShape3D_l2ndj")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=739699935]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.68101823, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1066631123]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46446025, -0.2839434)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=143312946]
+
+[node name="NamePlayer" type="Label3D" parent="." unique_id=540712881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0593542, 0)
+billboard = 2

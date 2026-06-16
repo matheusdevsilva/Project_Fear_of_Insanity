@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://xqngetogeix0"]
+
+[ext_resource type="Script" uid="uid://bphsh1txemo7q" path="res://Scenes/Lobby/lobby.gd" id="1_a15b7"]
+[ext_resource type="Texture2D" uid="uid://dfu32ogprgd84" path="res://Scenes/Lobby/pngtree-checkerboard-clipart-check-chess-game-checker-board-png-image_3111694.jpg" id="2_t6nvb"]
+[ext_resource type="PackedScene" uid="uid://cpj21b2xykawf" path="res://Scenes/Objects/Piano/Piano.tscn" id="3_q0a3m"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r02bc"]
+
+[sub_resource type="Sky" id="Sky_a15b7"]
+sky_material = SubResource("ProceduralSkyMaterial_r02bc")
+
+[sub_resource type="Environment" id="Environment_t6nvb"]
+background_mode = 2
+background_energy_multiplier = 0.5
+sky = SubResource("Sky_a15b7")
+ssr_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_q0a3m"]
+size = Vector2(12, 12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t6nvb"]
+albedo_texture = ExtResource("2_t6nvb")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a15b7"]
+points = PackedVector3Array(-6, 0, -6, -6, 0, 6, 6, 0, -6, 6, 0, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a15b7"]
+size = Vector3(200, 1, 200)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q0a3m"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_q0a3m"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ptqqe"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kye7n"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dy3e7"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[node name="Lobby" type="Node3D" unique_id=2119923105]
+script = ExtResource("1_a15b7")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=831839272]
+environment = SubResource("Environment_t6nvb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1941535296]
+transform = Transform3D(1.7988981, 0, 0, 0, 1, 0, 0, 0, 1.3796158, 0, -0.3720789, -1.5068886)
+mesh = SubResource("PlaneMesh_q0a3m")
+surface_material_override/0 = SubResource("StandardMaterial3D_t6nvb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1734475005]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=649254974]
+shape = SubResource("ConvexPolygonShape3D_a15b7")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1801438522]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.792489, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1271037715]
+shape = SubResource("BoxShape3D_a15b7")
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1536862332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4414649, 0)
+
+[node name="Piano" parent="." unique_id=2035543462 instance=ExtResource("3_q0a3m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.37524444, -8.555991)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=961860633]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1540866, 1.0019994, -8.2998905)
+light_color = Color(1, 1, 0.8602326, 1)
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1280311257]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D" unique_id=1703261770]
+transform = Transform3D(0.45745176, 0, 0, 0, 3.177313, 0, 0, 0, 13.708112, 8.0737295, 0.85231304, -2.6360085)
+mesh = SubResource("BoxMesh_q0a3m")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/MeshInstance3D2" unique_id=1760540577]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MeshInstance3D2/StaticBody3D" unique_id=1604380502]
+shape = SubResource("ConvexPolygonShape3D_q0a3m")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D" unique_id=1977435646]
+transform = Transform3D(-1.9995852e-08, 0, 15.250646, 0, 3.177313, 0, -0.45745176, 0, -6.6662693e-07, 0.6091831, 0.85231304, -9.410275)
+mesh = SubResource("BoxMesh_q0a3m")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/MeshInstance3D3" unique_id=1352470601]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MeshInstance3D3/StaticBody3D" unique_id=1427597981]
+shape = SubResource("ConvexPolygonShape3D_ptqqe")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Node3D" unique_id=1091439511]
+transform = Transform3D(-1.9995852e-08, 0, 15.250646, 0, 3.177313, 0, -0.45745176, 0, -6.6662693e-07, 0.6091831, 0.85231304, 4.052149)
+mesh = SubResource("BoxMesh_q0a3m")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/MeshInstance3D5" unique_id=1896090288]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MeshInstance3D5/StaticBody3D" unique_id=31688107]
+shape = SubResource("ConvexPolygonShape3D_kye7n")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D" unique_id=100485369]
+transform = Transform3D(0.45745176, 0, 0, 0, 3.177313, 0, 0, 0, 13.708112, -7.037508, 0.85231304, -2.6587064)
+mesh = SubResource("BoxMesh_q0a3m")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/MeshInstance3D4" unique_id=1134815091]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MeshInstance3D4/StaticBody3D" unique_id=1156902744]
+shape = SubResource("ConvexPolygonShape3D_dy3e7")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

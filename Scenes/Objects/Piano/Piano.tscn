@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cpj21b2xykawf"]
+
+[ext_resource type="Script" uid="uid://ddr8jhotcg75p" path="res://Scenes/Objects/Piano/Scripts/Piano.gd" id="1_eva33"]
+[ext_resource type="Script" uid="uid://bf1vnufu7na6x" path="res://addons/arlez80-godot-midi-player-g4-252157b64e9a/addons/midi/MidiPlayer.gd" id="2_vhqq3"]
+[ext_resource type="PackedScene" uid="uid://clevs7cewoum2" path="res://Scenes/Objects/Piano/Model/old_piano.glb" id="3_gai26"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gai26"]
+size = Vector3(2.1641235, 1, 1)
+
+[node name="Piano" type="Node3D" unique_id=2035543462]
+script = ExtResource("1_eva33")
+
+[node name="MidiPlayer" type="Node" parent="." unique_id=1543818435]
+script = ExtResource("2_vhqq3")
+metadata/_custom_type_script = "uid://bf1vnufu7na6x"
+
+[node name="Model" parent="." unique_id=1573757757 instance=ExtResource("3_gai26")]
+transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, 0, 0)
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=594848751]
+transform = Transform3D(0.99943626, 0, -0.033573825, 0, 1, 0, 0.033573825, 0, 0.99943626, 0, 0.92982924, 0.7551963)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1538291374]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1602646136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04776001, 0.6639892, 0)
+shape = SubResource("BoxShape3D_gai26")
